@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.scss';
 import { Button } from 'reactstrap';
-import { putMarkdown } from './action-creators/simpleAction';
+import { putCharacter } from './action-creators/actions';
 import { Col } from 'reactstrap';
 
 class SaveButton extends Component {
@@ -13,7 +13,7 @@ class SaveButton extends Component {
 
 	handleClick() {
 		console.log(this.props);
-		this.props.putMarkdown(this.props.userMarkdown.userMarkdown);
+		this.props.putCharacter(this.props.character.character);
 	}
 
 	render() {
@@ -35,7 +35,7 @@ class SaveButton extends Component {
 		}
 
 		return (
-			<div className='loadAndSaveButton'>
+			<div className='saveButton'>
 				{ button }
 			</div>
 		);
@@ -44,15 +44,15 @@ class SaveButton extends Component {
 
 const mapStateToProps = ( state ) => {   
 	return { 
-		userMarkdown: state.userMarkdown,
-		loading: state.changeMarkdown.loading
+		character: state.character,
+		loading: state.saveCharacter.loading
 	}
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		putMarkdown: (markdown) => {
-			dispatch(putMarkdown(markdown))
+		putCharacter: (character) => {
+			dispatch(putCharacter(character))
 		}
 	}
 };

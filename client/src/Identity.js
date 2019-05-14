@@ -28,7 +28,7 @@ class Identity extends Component {
 				<option value="operative">Operative</option>
 				<option value="outsider">Outsider</option>
 				<option value="tech">Tech</option>
-				<option value="torpedo">Torpedo</option>				
+				<option value="torpedo">Torpedo</option>
 				<option value="worker">Worker</option>
 			</select>					
 		);

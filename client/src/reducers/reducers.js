@@ -50,7 +50,7 @@ export const identityReducer = (state = {identity: 'activist'}, action) => {
   }
 }
 
-export const pConReducer = (state = [], action) => {
+export const pConReducer = (state = ['angry'], action) => {
   switch (action.type) {
     case CHANGEPCONS:
       return [...state, action.pCons];
@@ -59,7 +59,7 @@ export const pConReducer = (state = [], action) => {
   }
 }
 
-export const nConReducer = (state = [], action) => {
+export const nConReducer = (state = ['burned out'], action) => {
   switch (action.type) {
     case CHANGENCONS:
       return [...state, action.nCons];
@@ -117,7 +117,7 @@ export const ableReducer = (state = {able: 4}, action) => {
   }
 }
 
-export const motivationReducer = (state = {motivation: 'Please choose a motivation'}, action) => {
+export const motivationReducer = (state = {motivation: 'Envy'}, action) => {
   switch (action.type) {
     case CHANGEMOTIVATION:
       var newMotivation = {motivation: action.motivation};

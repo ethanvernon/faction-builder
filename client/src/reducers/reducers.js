@@ -40,7 +40,7 @@ export const handleReducer = (state = {handle: 'Please choose a handle'}, action
   }
 }
 
-export const identityReducer = (state = {identity: 'Please choose an identity'}, action) => {
+export const identityReducer = (state = {identity: 'activist'}, action) => {
   switch (action.type) {
     case CHANGEIDENTITY:
       var newIdentity = {identity: action.identity};

@@ -31,31 +31,40 @@ db.once("open", () => console.log("connected to the database"));
 //checks if connection with the database is successful
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-//post request to save user's markdown
-app.post("/api/new-file", function(req,res) {
+//post request to save user's character
+app.post("/api/new-char", function(req,res) {
 
 	let randomKey=generate()+generate()+generate();
 
-	var fileToAdd = new Files({
+	var charToAdd = new Character({
 		passkey: randomKey,
-		markdown: req.body.markdown
+		name: req.body.character.name,
+		handle: req.body.character.handle,
+		identity: req.body.character.identity,
+		pCons: req.body.character.pCons,
+		nCons: req.body.character.nCons,
+		gear: req.body.character.gear,
+		goal: req.body.character.goal,
+		ready: req.body.character.ready,
+		willing: req.body.character.willing,
+		able: req.body.character.able,
+		motivation: req.body.character.motivation
 	});
 
-	fileToAdd.save((err, response) => {
+	charToAdd.save((err, response) => {
 		if (err) {
 			console.log("error to databse: " + err);
 			return res.json({success: false, error: err});
 		}
 		console.log("success, response is: " + response);
 		let condensedResponse = {
-			"passkey": response.passkey,
-			"markdown": response.markdown
+			"passkey": response.passkey
 		};
 		return res.json(condensedResponse);
 	});
 });
 
-//get request for user's markdown
+/*get request for user's markdown
 app.get("/api/get-file", (req, res) => {
 
 	console.log('recieved get request');
@@ -86,7 +95,7 @@ app.post("/api/save-file", (req, res) => {
 		if (err) return res.json({ success: false, error: err });
 		return res.json({ success: true });
 	});
-});
+});*/
 
 //launch our backend into a port
 app.listen(API_PORT, () => console.log("LISTENING ON PORT ${API_PORT}"));

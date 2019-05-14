@@ -1,17 +1,57 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//this is data structure for saving markdown to database
-var fileSchema = new Schema({    
+//this is data structure for saving a character to database
+var charSchema = new Schema({    
 	passkey: {
 		type:String,
 		required: true
 	},
-	markdown: {
+	name: {
 		type:String,
+		required:true
+	},
+	handle: {
+		type:String,
+		required:false
+	},
+	identity: {
+		type:String,
+		required:true
+	},
+	pCons: {
+		type:Array,
+		required:true
+	},
+	nCons: {
+		type:Array,
+		required:true
+	},
+	gear: {
+		type:Array,
+		required:true
+	},
+	motivation: {
+		type:String,
+		required:true
+	},
+	goal: {
+		type:String,
+		required:true
+	},
+	ready: {
+		type:Number,
+		required:true
+	},
+	willing: {
+		type:Number,
+		required:true
+	},
+	able: {
+		type:Number,
 		required:true
 	}
 });
 
 //export the Schema
-module.exports = mongoose.model("Files", fileSchema);
+module.exports = mongoose.model("Character", charSchema);

@@ -77,6 +77,56 @@ export const gearReducer = (state = [], action) => {
   }
 }
 
+export const changeGoal = (state = {goal: 'Please enter a goal'}, action) => {
+  switch (action.type) {
+    case CHANGEGOAL:
+      var newGoal = {goal: action.goal};
+      return Object.assign({}, state, newGoal);
+    default:
+      return state;
+  }
+}
+
+export const changeReady = (state = {ready: 4}, action) => {
+  switch (action.type) {
+    case CHANGEREADY:
+      var newReady = {ready: action.ready}
+      return Object.assign({}, state, newReady);
+    default:
+      return state;
+  }
+}
+
+export const changeWilling = (state = {willing: 4}, action) => {
+  switch (action.type) {
+    case CHANGEWILLING:
+      var newWilling = {willing: action.willing};
+      return Object.assign({}, state, newWilling);
+    default:
+      return state;
+  }
+}
+
+export const changeAble = (state = {able: 4}, action) => {
+  switch (action.type) {
+    case CHANGEABLE:
+      var newAble = {able: action.able};
+      return Object.assign({}, state, newAble);
+    default:
+      return state;
+  }
+}
+
+export const changeMotivation = (state = {motivation: 'Please choose a motivation'}, action) => {
+  switch (action.type) {
+    case CHANGEMOTIVATION:
+      var newMotivation = {motivation: action.motivation};
+      return Object.assign({}, state, newMotivation);
+    default:
+      return state;
+  }
+}
+
 export const putCharacterReducer = (state = {loading: false, character: [{passkey:''}], error: null}, action) => {
   switch (action.type) {
     case PUT_CHARACTER_STARTED:

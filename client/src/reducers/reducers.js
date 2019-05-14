@@ -1,10 +1,18 @@
 import { 
   CHANGENAME, 
-  CHANGECHARACTER, 
   PUT_CHARACTER_SUCCESS, 
   PUT_CHARACTER_FAILURE, 
-  PUT_CHARACTER_STARTED, 
-  CHANGEPASSKEY,/*
+  PUT_CHARACTER_STARTED,
+  CHANGEHANDLE,
+  CHANGEIDENTITY,
+  ADDPCONS,
+  ADDNCONS,
+  ADDGEAR,
+  CHANGEGOAL,
+  CHANGEREADY,
+  CHANGEABLE,
+  CHANGEWILLING,
+  CHANGEMOTIVATION/*
   GET_CHARACTER_STARTED,
   GET_CHARACTER_SUCCESS,
   GET_CHARACTER_FAILURE*/ } from '../action-creators/actions';
@@ -21,6 +29,53 @@ export const nameReducer = (state = {name: 'Please enter a name'}, action) => {
       return state;
   }
 };
+
+export const handleReducer = (state = {handle: 'Please choose a handle'}, action) => {
+  switch (action.type) {
+    case CHANGEHANDLE:
+      var newHandle = {handle: action.handle};
+      return Object.assign({}, state, newHandle);
+    default:
+      return state;
+  }
+}
+
+export const identityReducer = (state = {identity: 'Please choose an identity'}, action) => {
+  switch (action.type) {
+    case CHANGEIDENTITY:
+      var newIdentity = {identity: action.identity};
+      return Object.assign({}, state, newIdentity);
+    default:
+      return state;
+  }
+}
+
+export const pConReducer = (state = [], action) => {
+  switch (action.type) {
+    case CHANGEPCONS:
+      return [...state, action.pCons];
+    default:
+      return state;
+  }
+}
+
+export const nConReducer = (state = [], action) => {
+  switch (action.type) {
+    case CHANGENCONS:
+      return [...state, action.nCons];
+    default:
+      return state;
+  }
+}
+
+export const gearReducer = (state = [], action) => {
+  switch (action.type) {
+    case CHANGEGEAR:
+      return [...state, action.gear];
+    default:
+      return state;
+  }
+}
 
 export const putCharacterReducer = (state = {loading: false, character: [{passkey:''}], error: null}, action) => {
   switch (action.type) {

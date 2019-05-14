@@ -3,9 +3,9 @@ import axios from "axios";
 export const CHANGENAME = 'CHANGENAME';
 export const CHANGEHANDLE = 'CHANGEHANDLE';
 export const CHANGEIDENTITY = 'CHANGEIDENTITY';
-export const CHANGEPCONS = 'CHANGEPCONS';
-export const CHANGENCONS = 'CHANGENCONS';
-export const CHANGEGEAR = 'CHANGEGEAR';
+export const ADDPCONS = 'ADDPCONS';
+export const ADDNCONS = 'ADDNCONS';
+export const ADDGEAR = 'ADDGEAR';
 export const CHANGEGOAL = 'CHANGEGOAL';
 export const CHANGEREADY = 'CHANGEREADY';
 export const CHANGEABLE = 'CHANGEABLE';
@@ -39,23 +39,23 @@ export const changeIdentity = (identity) => {
 	}
 }
 
-export const changePCons = (pCons) => {
+export const addPCons = (pCons) => {
 	return {
-		type: CHANGEPCONS,
+		type: ADDPCONS,
 		pCons: pCons
 	}
 }
 
-export const changeNCons = (nCons) => {
+export const addNCons = (nCons) => {
 	return {
-		type: CHANGENCONS,
+		type: ADDNCONS,
 		nCons: nCons
 	}
 }
 
-export const changeGear = (gear) => {
+export const addGear = (gear) => {
 	return {
-		type: CHANGEGEAR,
+		type: ADDGEAR,
 		gear: gear
 	}
 }

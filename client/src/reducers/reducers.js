@@ -127,24 +127,24 @@ export const motivationReducer = (state = {motivation: 'Please choose a motivati
   }
 }
 
-export const putCharacterReducer = (state = {loading: false, character: [{passkey:''}], error: null}, action) => {
+export const putCharacterReducer = (state = {saving: false, character: [{passkey:''}], error: null}, action) => {
   switch (action.type) {
     case PUT_CHARACTER_STARTED:
       return {
         ...state,
-        loading: true
+        saving: true
       };
     case PUT_CHARACTER_SUCCESS:
       return {
         ...state,
-        loading: false,
+        saving: false,
         error: null,
         character: [...state.character, action.payload]
       };
     case PUT_CHARACTER_FAILURE:
       return {
         ...state,
-        loading: false,
+        saving: false,
         error: action.payload.error
       };
     default:

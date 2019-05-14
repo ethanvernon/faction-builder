@@ -20,7 +20,7 @@ export const rootReducer = combineReducers({
 	name: nameReducer,
 	handle: handleReducer,
 	identity: identityReducer,
-	Pcon: pConReducer,
+	pCon: pConReducer,
 	nCon: nConReducer,
 	gear: gearReducer,
 	goal: goalReducer,

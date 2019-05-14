@@ -19,7 +19,7 @@ import {
 
 var defaultState = "";
 
-export const nameReducer = (state = {name: 'Please enter a name'}, action) => {
+export const nameReducer = (state = {name: ''}, action) => {
   switch (action.type) {
     case CHANGENAME:
       // don't mutate state here

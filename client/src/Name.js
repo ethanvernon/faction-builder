@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { changeName } from './action-creators/simpleAction';
+import { changeName } from './action-creators/actions';
 import './App.scss';
 import { Col } from 'reactstrap';
 
@@ -17,19 +17,16 @@ class Name extends Component {
 
 	render() {		
 		return (
-			<Col sm="4" className='name'>
-				<div className='vertical-outer-stacked'>
-					<p className='input-label'>DOCUMENT NAME </p>
-					<input className='user-text-box' value={this.props.docName.docName} onChange={this.handleChange}/>
-				</div>
-			</Col>
+			<div>
+				<input className='name' type='text' placeholder="Please enter a name" value={this.props.name} onChange={this.handleChange}/>
+			</div>
 		);
 	}
 }
 
 const mapStateToProps = ( state ) => {   
 	return { 
-		docName: state.docName,
+		name: state.name.name,
 	}
 };
 

@@ -77,7 +77,7 @@ export const gearReducer = (state = [], action) => {
   }
 }
 
-export const changeGoal = (state = {goal: 'Please enter a goal'}, action) => {
+export const goalReducer = (state = {goal: 'Please enter a goal'}, action) => {
   switch (action.type) {
     case CHANGEGOAL:
       var newGoal = {goal: action.goal};
@@ -87,7 +87,7 @@ export const changeGoal = (state = {goal: 'Please enter a goal'}, action) => {
   }
 }
 
-export const changeReady = (state = {ready: 4}, action) => {
+export const readyReducer = (state = {ready: 4}, action) => {
   switch (action.type) {
     case CHANGEREADY:
       var newReady = {ready: action.ready}
@@ -97,7 +97,7 @@ export const changeReady = (state = {ready: 4}, action) => {
   }
 }
 
-export const changeWilling = (state = {willing: 4}, action) => {
+export const willingReducer = (state = {willing: 4}, action) => {
   switch (action.type) {
     case CHANGEWILLING:
       var newWilling = {willing: action.willing};
@@ -107,7 +107,7 @@ export const changeWilling = (state = {willing: 4}, action) => {
   }
 }
 
-export const changeAble = (state = {able: 4}, action) => {
+export const ableReducer = (state = {able: 4}, action) => {
   switch (action.type) {
     case CHANGEABLE:
       var newAble = {able: action.able};
@@ -117,7 +117,7 @@ export const changeAble = (state = {able: 4}, action) => {
   }
 }
 
-export const changeMotivation = (state = {motivation: 'Please choose a motivation'}, action) => {
+export const motivationReducer = (state = {motivation: 'Please choose a motivation'}, action) => {
   switch (action.type) {
     case CHANGEMOTIVATION:
       var newMotivation = {motivation: action.motivation};

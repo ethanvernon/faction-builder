@@ -11,10 +11,6 @@ var charSchema = new Schema({
 		type:String,
 		required:true
 	},
-	handle: {
-		type:String,
-		required:false
-	},
 	identity: {
 		type:String,
 		required:true

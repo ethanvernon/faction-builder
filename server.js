@@ -39,10 +39,9 @@ app.post("/api/new-char", function(req,res) {
 	var charToAdd = new Character({
 		passkey: randomKey,
 		name: req.body.character.name,
-		handle: req.body.character.handle,
 		identity: req.body.character.identity,
-		pCons: req.body.character.pCons,
-		nCons: req.body.character.nCons,
+		pCons: req.body.character.pCon,
+		nCons: req.body.character.nCon,
 		gear: req.body.character.gear,
 		goal: req.body.character.goal,
 		ready: req.body.character.ready,

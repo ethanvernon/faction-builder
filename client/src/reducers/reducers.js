@@ -53,7 +53,8 @@ export const identityReducer = (state = {identity: 'activist'}, action) => {
 export const pConReducer = (state = ['angry'], action) => {
   switch (action.type) {
     case ADDPCONS:
-      return [...state, action.pCons];
+      var newPCon = {pCon: action.pCons};
+      return Object.assign({}, state, newPCon);
     default:
       return state;
   }
@@ -62,7 +63,8 @@ export const pConReducer = (state = ['angry'], action) => {
 export const nConReducer = (state = ['burned out'], action) => {
   switch (action.type) {
     case ADDNCONS:
-      return [...state, action.nCons];
+      var newNCon = {nCon: action.nCons};
+      return Object.assign({}, state, newNCon);
     default:
       return state;
   }
@@ -71,7 +73,8 @@ export const nConReducer = (state = ['burned out'], action) => {
 export const gearReducer = (state = [], action) => {
   switch (action.type) {
     case ADDGEAR:
-      return [...state, action.gear];
+      var newGear = {gear: action.gear};
+      return Object.assign({}, state, newGear);
     default:
       return state;
   }

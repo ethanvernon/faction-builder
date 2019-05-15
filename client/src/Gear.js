@@ -38,7 +38,7 @@ class Gear extends Component {
 	render() {		
 		return (
 			<div>
-				<select value={this.props.gear} onChange={(e) => this.handleChange("brand", e)}>
+				<select value={this.state.brand} onChange={(e) => this.handleChange("brand", e)}>
 					<optgroup label="Engineering">
 						<option value="Asüna">Asüna</option>
 						<option value="Datsun">Datsun</option>
@@ -66,7 +66,7 @@ class Gear extends Component {
 				</select>
 
 
-				<select value={this.props.motivation} onChange={(e) => this.handleChange("item", e)}>
+				<select value={this.state.item} onChange={(e) => this.handleChange("item", e)}>
 					<optgroup label="Vehicles">
 						<option value="Coupé">Coupé</option>
 						<option value="Dumpster">Dumpster</option>

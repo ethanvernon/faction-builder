@@ -87,7 +87,7 @@ export const goalReducer = (state = {goal: ''}, action) => {
   }
 }
 
-export const readyReducer = (state = {ready: 4}, action) => {
+export const readyReducer = (state = {ready: 0}, action) => {
   switch (action.type) {
     case CHANGEREADY:
       var newReady = {ready: action.ready}
@@ -97,7 +97,7 @@ export const readyReducer = (state = {ready: 4}, action) => {
   }
 }
 
-export const willingReducer = (state = {willing: 4}, action) => {
+export const willingReducer = (state = {willing: 0}, action) => {
   switch (action.type) {
     case CHANGEWILLING:
       var newWilling = {willing: action.willing};
@@ -107,7 +107,7 @@ export const willingReducer = (state = {willing: 4}, action) => {
   }
 }
 
-export const ableReducer = (state = {able: 4}, action) => {
+export const ableReducer = (state = {able: 0}, action) => {
   switch (action.type) {
     case CHANGEABLE:
       var newAble = {able: action.able};

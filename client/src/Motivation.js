@@ -18,16 +18,16 @@ class Motivation extends Component {
 	render() {		
 		return (
 			<select value={this.props.motivation} onChange={this.handleChange}>
-				<option value="activist">Envy</option>
-				<option value="courier">Freedom</option>
-				<option value="dealer">Knowledge</option>
-				<option value="hacker">Lust</option>
-				<option value="insider">Power</option>
-				<option value="operative">Pride</option>
-				<option value="outsider">Respect</option>
-				<option value="tech">Revenge</option>
-				<option value="torpedo">Greed</option>
-				<option value="worker">Survival</option>
+				<option value="envy">Envy</option>
+				<option value="freedom">Freedom</option>
+				<option value="knowledge">Knowledge</option>
+				<option value="lust">Lust</option>
+				<option value="power">Power</option>
+				<option value="pride">Pride</option>
+				<option value="respect">Respect</option>
+				<option value="revenge">Revenge</option>
+				<option value="greed">Greed</option>
+				<option value="survival">Survival</option>
 			</select>
 		);
 	}

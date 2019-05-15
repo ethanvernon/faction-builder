@@ -50,7 +50,7 @@ export const identityReducer = (state = {identity: 'activist'}, action) => {
   }
 }
 
-export const pConReducer = (state = ['angry'], action) => {
+export const pConReducer = (state = {pCon: 'angry'}, action) => {
   switch (action.type) {
     case ADDPCONS:
       var newPCon = {pCon: action.pCons};
@@ -60,7 +60,7 @@ export const pConReducer = (state = ['angry'], action) => {
   }
 }
 
-export const nConReducer = (state = ['burned out'], action) => {
+export const nConReducer = (state = {nCon: 'burned out'}, action) => {
   switch (action.type) {
     case ADDNCONS:
       var newNCon = {nCon: action.nCons};
@@ -70,7 +70,7 @@ export const nConReducer = (state = ['burned out'], action) => {
   }
 }
 
-export const gearReducer = (state = [], action) => {
+export const gearReducer = (state = {gear: 'Asüna Coupé'}, action) => {
   switch (action.type) {
     case ADDGEAR:
       var newGear = {gear: action.gear};
@@ -90,7 +90,7 @@ export const goalReducer = (state = {goal: ''}, action) => {
   }
 }
 
-export const readyReducer = (state = {ready: 0}, action) => {
+export const readyReducer = (state = {ready: 1}, action) => {
   switch (action.type) {
     case CHANGEREADY:
       var newReady = {ready: action.ready}
@@ -100,7 +100,7 @@ export const readyReducer = (state = {ready: 0}, action) => {
   }
 }
 
-export const willingReducer = (state = {willing: 0}, action) => {
+export const willingReducer = (state = {willing: 1}, action) => {
   switch (action.type) {
     case CHANGEWILLING:
       var newWilling = {willing: action.willing};
@@ -110,7 +110,7 @@ export const willingReducer = (state = {willing: 0}, action) => {
   }
 }
 
-export const ableReducer = (state = {able: 0}, action) => {
+export const ableReducer = (state = {able: 1}, action) => {
   switch (action.type) {
     case CHANGEABLE:
       var newAble = {able: action.able};

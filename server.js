@@ -47,7 +47,8 @@ app.post("/api/new-char", function(req,res) {
 		ready: req.body.character.ready,
 		willing: req.body.character.willing,
 		able: req.body.character.able,
-		motivation: req.body.character.motivation
+		motivation: req.body.character.motivation,
+		points: req.body.character.points
 	});
 
 	charToAdd.save()

@@ -18,9 +18,7 @@ class SaveButton extends Component {
 
 	//our state is flattened, so we want to combine it all into a single character object to send to db
 	characterMaker() {
-		if (this.props.points > 0) {
-			console.log('points unspent');
-		}
+		console.log(this.props.points);
 
 		var newCharacter =  {
 			name: this.props.name,
@@ -33,7 +31,8 @@ class SaveButton extends Component {
 			ready: this.props.ready,
 			willing: this.props.willing,
 			able: this.props.able,
-			motivation: this.props.motivation
+			motivation: this.props.motivation,
+			points: this.props.points
 		}
 
 		return newCharacter;

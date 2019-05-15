@@ -49,7 +49,6 @@ var charSchema = new Schema({
 	},
 	points: {
 		type: Number,
-		required:true,
     	max: [0, 'unspent points']
 	}
 });

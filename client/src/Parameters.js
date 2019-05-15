@@ -88,8 +88,12 @@ class Parameters extends Component {
 	render() {		
 		return (
 			<Container>
+				<Row>
+					Points to spend: {this.state.points}  
+				</Row>
 		    	<Row>			      
 					<Col>
+					Ready (max 8): 
 						<span onClick={() => this.handleClick('ready', 'dec')}>
 							-
 						</span>
@@ -104,6 +108,7 @@ class Parameters extends Component {
 					</Col>
 			      
 					<Col>
+					Willing (max 8): 
 						<span onClick={() => this.handleClick('willing', 'dec')}>
 							-
 						</span>
@@ -118,6 +123,7 @@ class Parameters extends Component {
 					</Col>
 
 					<Col>
+					Able (max 8): 
 						<span onClick={() => this.handleClick('able', 'dec')}>
 							-
 						</span>

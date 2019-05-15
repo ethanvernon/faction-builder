@@ -18,6 +18,10 @@ class SaveButton extends Component {
 
 	//our state is flattened, so we want to combine it all into a single character object to send to db
 	characterMaker() {
+		if (this.props.points > 0) {
+			console.log('points unspent');
+		}
+
 		var newCharacter =  {
 			name: this.props.name,
 			handle: this.props.handle,
@@ -74,7 +78,8 @@ const mapStateToProps = ( state ) => {
 		willing: state.willing.willing,
 		able: state.able.able,
 		motivation: state.motivation.motivation,
-		saving: state.saveCharacter.saving
+		saving: state.saveCharacter.saving,
+		points: state.points.points
 	}
 };
 

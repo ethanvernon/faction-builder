@@ -3,16 +3,13 @@ import { connect } from 'react-redux';
 import { changeReady } from './action-creators/actions';
 import { changeWilling } from './action-creators/actions';
 import { changeAble } from './action-creators/actions';
+import { changePoints } from './action-creators/actions';
 import './App.scss';
 import { Container, Row, Col } from 'reactstrap';
 
 class Parameters extends Component {
 	constructor(props) {
 		super(props);
-
-		this.state = {
-			points: 12
-		}
 
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -21,36 +18,30 @@ class Parameters extends Component {
 		let ready = this.props.ready;
 		let willing = this.props.willing;
 		let able = this.props.able;
-		let points = this.state.points;
+		let points = this.props.points;
 
 		//if increasing parameter and still have points
-		if (!this.state.points < 1 && direction=='inc') {
+		if (!points < 1 && direction=='inc') {
 
 			//decrease points, increase ready value in store, update local points state
 			if (parameter == 'ready' & ready < 8) {
 				points--;
 				this.props.changeReady(this.props.ready+1);
-				this.setState({
-					points: points
-				});
+				this.props.changePoints(points);
 			}
 
 			//decrease points, increase willing value in store, update local points state
 			if (parameter == 'willing' & willing < 8) {
 				points--;
 				this.props.changeWilling(this.props.willing+1);
-				this.setState({
-					points: points
-				});
+				this.props.changePoints(points);
 			}
 
 			//decrease points, increase able value in store, update local points state
 			if (parameter == 'able' & able < 8) {
 				points--;
 				this.props.changeAble(this.props.able+1);
-				this.setState({
-					points: points
-				});
+				this.props.changePoints(points);
 			}
 		}
 
@@ -60,27 +51,21 @@ class Parameters extends Component {
 			if (parameter == 'ready' & ready > 1) {
 				points++;
 				this.props.changeReady(this.props.ready-1);
-				this.setState({
-					points: points
-				});
+				this.props.changePoints(points);
 			}
 
 			//increase points, decrease willing value in store, update local points state
 			if (parameter == 'willing' & willing > 1) {
 				points++;
 				this.props.changeWilling(this.props.willing-1);
-				this.setState({
-					points: points
-				});
+				this.props.changePoints(points);
 			}
 
 			//increase points, decrease able value in store, update local points state
 			if (parameter == 'able' & able > 1) {
 				points++;
 				this.props.changeAble(this.props.able-1);
-				this.setState({
-					points: points
-				});
+				this.props.changePoints(points);
 			}
 		}
 	}
@@ -89,7 +74,7 @@ class Parameters extends Component {
 		return (
 			<Container>
 				<Row>
-					Points to spend: {this.state.points}  
+					Points to spend: {this.props.points}  
 				</Row>
 		    	<Row>			      
 					<Col>
@@ -147,6 +132,7 @@ const mapStateToProps = ( state ) => {
 		ready: state.ready.ready,
 		willing: state.willing.willing,
 		able: state.able.able,
+		points: state.points.points
 	}
 };
 
@@ -160,6 +146,9 @@ const mapDispatchToProps = (dispatch) => {
 		},
 		changeAble: (able) => {
 			dispatch(changeAble(able))
+		},
+		changePoints: (points) => {
+			dispatch(changePoints(points))
 		}
 	}
 };

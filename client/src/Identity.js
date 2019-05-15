@@ -7,9 +7,7 @@ import { Col } from 'reactstrap';
 class Identity extends Component {
 	constructor(props) {
 		super(props);
-
-		// this.handleChange = this.handleChange.bind(this);
-		// this.submitTitle = this.submitTitle.bind(this);
+		
 		this.handleChange = this.handleChange.bind(this);
 	}
 

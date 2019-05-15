@@ -35,9 +35,6 @@ class NCon extends Component {
 	}
 }
 
- Burned Out  Coerced  Confused  Destitute  Dying  Hesitant
- Humiliated  Hunted  Impaired  Injured  Lost  Trapped
-
 const mapStateToProps = ( state ) => {   
 	return { 
 		nCon: state.nCon.nCon,

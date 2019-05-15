@@ -77,7 +77,7 @@ export const gearReducer = (state = [], action) => {
   }
 }
 
-export const goalReducer = (state = {goal: 'Please enter a goal'}, action) => {
+export const goalReducer = (state = {goal: ''}, action) => {
   switch (action.type) {
     case CHANGEGOAL:
       var newGoal = {goal: action.goal};

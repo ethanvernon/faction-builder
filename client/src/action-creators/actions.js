@@ -108,7 +108,7 @@ export const putCharacter = (character) => {
 		})
 		.then(res => {
 			dispatch(putCharacterSucess(res.data));
-			dispatch(changePasskey(res.data.passkey));
+			//dispatch(changePasskey(res.data.passkey));
 		})
 		.catch(err => {
 			dispatch(putCharacterFailure(err.message));

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { changeGear } from './action-creators/actions';
+import { addGear } from './action-creators/actions';
 import './App.scss';
 import { Col } from 'reactstrap';
 
@@ -31,14 +31,14 @@ class Gear extends Component {
 		//check if both gear and item are chosen, if so send to store as string
 		if (this.state.brand && this.state.item) {
 			var newGear = this.state.brand + " " + this.state.item;
-			this.props.changeGear(newGear);
+			this.props.addGear(newGear);
 		}		
 	}
 
 	render() {		
 		return (
 			<div>
-				<select value={this.props.gear} onChange={(e) => this.props.handleChange("brand", e)}>
+				<select value={this.props.gear} onChange={(e) => this.handleChange("brand", e)}>
 					<optgroup label="Engineering">
 						<option value="Asüna">Asüna</option>
 						<option value="Datsun">Datsun</option>
@@ -66,7 +66,7 @@ class Gear extends Component {
 				</select>
 
 
-				<select value={this.props.motivation} onChange={(e) => this.props.handleChange("item", e)}>
+				<select value={this.props.motivation} onChange={(e) => this.handleChange("item", e)}>
 					<optgroup label="Vehicles">
 						<option value="Coupé">Coupé</option>
 						<option value="Dumpster">Dumpster</option>
@@ -155,8 +155,8 @@ const mapStateToProps = ( state ) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		changeGear: (gear) => {
-			dispatch(changeGear(gear))
+		addGear: (gear) => {
+			dispatch(addGear(gear))
 		}
 	}
 };

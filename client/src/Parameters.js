@@ -154,10 +154,10 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		changeReady: (ready) => {
 			dispatch(changeReady(ready))
-		}
+		},
 		changeWilling: (willing) => {
 			dispatch(changeWilling(willing))
-		}
+		},
 		changeAble: (able) => {
 			dispatch(changeAble(able))
 		}

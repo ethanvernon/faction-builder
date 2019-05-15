@@ -52,7 +52,7 @@ export const identityReducer = (state = {identity: 'activist'}, action) => {
 
 export const pConReducer = (state = ['angry'], action) => {
   switch (action.type) {
-    case CHANGEPCONS:
+    case ADDPCONS:
       return [...state, action.pCons];
     default:
       return state;
@@ -61,7 +61,7 @@ export const pConReducer = (state = ['angry'], action) => {
 
 export const nConReducer = (state = ['burned out'], action) => {
   switch (action.type) {
-    case CHANGENCONS:
+    case ADDNCONS:
       return [...state, action.nCons];
     default:
       return state;
@@ -70,7 +70,7 @@ export const nConReducer = (state = ['burned out'], action) => {
 
 export const gearReducer = (state = [], action) => {
   switch (action.type) {
-    case CHANGEGEAR:
+    case ADDGEAR:
       return [...state, action.gear];
     default:
       return state;

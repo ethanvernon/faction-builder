@@ -50,9 +50,17 @@ app.post("/api/new-char", function(req,res) {
 		motivation: req.body.character.motivation
 	});
 
-	charToAdd.save((err, response) => {
+	charToAdd.save()
+	.then(item => {
+		res.send('success');
+	})
+	.catch(err => {
+		res.status(400).send(err);
+	});
+
+	/*charToAdd.save((err, response) => {
 		if (err) {
-			console.log("error to databse: " + err);
+			console.log("error to database: " + err);
 			return res.json({success: false, error: err});
 		}
 		console.log("success, response is: " + response);
@@ -60,7 +68,7 @@ app.post("/api/new-char", function(req,res) {
 			"passkey": response.passkey
 		};
 		return res.json(condensedResponse);
-	});
+	});*/
 });
 
 /*get request for user's markdown

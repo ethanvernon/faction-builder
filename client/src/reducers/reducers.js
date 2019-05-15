@@ -141,7 +141,7 @@ export const motivationReducer = (state = {motivation: 'Envy'}, action) => {
   }
 }
 
-export const putCharacterReducer = (state = {saving: false, character: [{passkey:''}], error: null}, action) => {
+export const putCharacterReducer = (state = {saving: false, character: [], error: null}, action) => {
   switch (action.type) {
     case PUT_CHARACTER_STARTED:
       return {

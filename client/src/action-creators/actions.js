@@ -110,16 +110,16 @@ export const putCharacter = (character) => {
 		//first dispatch an immediate synchronous action to the store to indicate that we’ve started saving 
 		dispatch(putCharacterStarted());
 
-		axios.post("/api/new-char", {
-				character,
-				completed: false
+		return axios.post("/api/new-char", {
+				character
 		})
 		.then(res => {
 			dispatch(putCharacterSucess(res.data));
 			//dispatch(changePasskey(res.data.passkey));
 		})
 		.catch(err => {
-			dispatch(putCharacterFailure(err.message));
+			console.log('error caught');
+			dispatch(putCharacterFailure(err.response.data.message));
 		});
 	};
 };

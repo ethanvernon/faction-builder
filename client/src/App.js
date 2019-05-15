@@ -11,6 +11,7 @@ import Motivation from './Motivation';
 import Goal from './Goal';
 import Gear from './Gear';
 import SaveButton from './SaveButton';
+import Response from './Response';
 
 class App extends Component {
 	constructor(props) {
@@ -33,6 +34,7 @@ class App extends Component {
 				<Goal/>
 				<Gear/>
 				<SaveButton/>
+				<Response/>
 			</div>
 		);
 	}

@@ -74,7 +74,9 @@ class Parameters extends Component {
 		return (
 			<Container>
 				<Row>
-					Points to spend: {this.props.points}  
+					<Col>
+						Points to spend: {this.props.points}
+					</Col>
 				</Row>
 		    	<Row>			      
 					<Col>
@@ -82,11 +84,7 @@ class Parameters extends Component {
 						<span onClick={() => this.handleClick('ready', 'dec')}>
 							-
 						</span>
-					</Col>
-					<Col>
-						<h3 id="break-length" className='length'>{this.props.ready}</h3>
-					</Col>
-					<Col>
+						<span id="break-length" className='length'>{this.props.ready}</span>
 						<span onClick={() => this.handleClick('ready', 'inc')}>
 							+
 						</span>
@@ -97,11 +95,7 @@ class Parameters extends Component {
 						<span onClick={() => this.handleClick('willing', 'dec')}>
 							-
 						</span>
-					</Col>
-					<Col>
-						<h3 id="session-length" className='length'>{this.props.willing}</h3>
-					</Col>
-					<Col>
+						<span id="session-length" className='length'>{this.props.willing}</span>
 						<span onClick={() => this.handleClick('willing', 'inc')}>
 							+
 						</span>
@@ -112,11 +106,7 @@ class Parameters extends Component {
 						<span onClick={() => this.handleClick('able', 'dec')}>
 							-
 						</span>
-					</Col>
-					<Col>
-						<h3 id="session-length" className='length'>{this.props.able}</h3>
-					</Col>
-					<Col>
+						<span id="session-length" className='length'>{this.props.able}</span>
 						<span onClick={() => this.handleClick('able', 'inc')}>
 							+
 						</span>

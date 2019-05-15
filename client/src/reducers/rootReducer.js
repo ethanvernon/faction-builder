@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import { nameReducer,
+import { pointsReducer,
+	nameReducer,
 	handleReducer,
 	identityReducer,
 	pConReducer,
@@ -17,6 +18,7 @@ import { nameReducer,
  * followed by the reducer associated with it.
  */
 export const rootReducer = combineReducers({
+	points: pointsReducer,
 	name: nameReducer,
 	handle: handleReducer,
 	identity: identityReducer,

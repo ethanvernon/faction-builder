@@ -11,12 +11,20 @@ export const CHANGEREADY = 'CHANGEREADY';
 export const CHANGEABLE = 'CHANGEABLE';
 export const CHANGEWILLING = 'CHANGEWILLING';
 export const CHANGEMOTIVATION = 'CHANGEMOTIVATION';
+export const CHANGEPOINTS = 'CHANGEPOINTS';
 export const PUT_CHARACTER_SUCCESS = 'PUT_CHARACTER_SUCCESS';
 export const PUT_CHARACTER_FAILURE = 'PUT_CHARACTER_FAILURE';
 export const PUT_CHARACTER_STARTED = 'PUT_CHARACTER_STARTED';
 /*export const GET_CHARACTER_SUCCESS = 'GET_CHARACTER_SUCCESS';
 export const GET_CHARACTER_FAILURE = 'GET_CHARACTER_FAILURE';
 export const GET_CHARACTER_STARTED = 'GET_CHARACTER_STARTED';*/
+
+export const changePoints = (points) => {
+	return {
+		type: CHANGEPOINTS,
+		points: points
+	}
+}
 
 export const changeName = (name) => {
 	return {

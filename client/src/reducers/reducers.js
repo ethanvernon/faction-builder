@@ -1,4 +1,5 @@
 import { 
+  CHANGEPOINTS,
   CHANGENAME, 
   PUT_CHARACTER_SUCCESS, 
   PUT_CHARACTER_FAILURE, 
@@ -18,6 +19,16 @@ import {
   GET_CHARACTER_FAILURE*/ } from '../action-creators/actions';
 
 var defaultState = "";
+
+export const pointsReducer = (state = {points: 12}, action) => {
+  switch (action.type) {
+    case CHANGEPOINTS:
+      var newPoints = {points: action.points}
+      return Object.assign({}, state, newPoints);
+    default:
+      return state;
+  }
+}
 
 export const nameReducer = (state = {name: ''}, action) => {
   switch (action.type) {

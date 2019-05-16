@@ -43,7 +43,8 @@ app.post("/api/new-faction", function(req,res) {
 		pCons: req.body.faction.pCon,
 		nCons: req.body.faction.nCon,
 		influence: req.body.faction.influence,
-		motivation: req.body.faction.motivation
+		motivation: req.body.faction.motivation,
+		npc: req.body.faction.npc
 	});
 
 	charToAdd.save()

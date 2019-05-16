@@ -31,6 +31,10 @@ var factionSchema = new Schema({
 		type:Number,
 		required:true
 	}
+	npc: {
+		type:String,
+		required:true
+	},
 });
 
 //export the Schema

@@ -31,8 +31,6 @@ class App extends Component {
 				<PCon/>
 				<NCon/>
 				<Motivation/>
-				<Goal/>
-				<Gear/>
 				<SaveButton/>
 				<Response/>
 			</div>

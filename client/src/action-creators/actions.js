@@ -1,17 +1,11 @@
 import axios from "axios";
 
 export const CHANGENAME = 'CHANGENAME';
-export const CHANGEHANDLE = 'CHANGEHANDLE';
 export const CHANGEIDENTITY = 'CHANGEIDENTITY';
 export const ADDPCONS = 'ADDPCONS';
 export const ADDNCONS = 'ADDNCONS';
-export const ADDGEAR = 'ADDGEAR';
-export const CHANGEGOAL = 'CHANGEGOAL';
-export const CHANGEREADY = 'CHANGEREADY';
-export const CHANGEABLE = 'CHANGEABLE';
-export const CHANGEWILLING = 'CHANGEWILLING';
+export const CHANGEINFLUENCE = 'CHANGEINFLUENCE';
 export const CHANGEMOTIVATION = 'CHANGEMOTIVATION';
-export const CHANGEPOINTS = 'CHANGEPOINTS';
 export const PUT_FACTION_SUCCESS = 'PUT_FACTION_SUCCESS';
 export const PUT_FACTION_FAILURE = 'PUT_FACTION_FAILURE';
 export const PUT_FACTION_STARTED = 'PUT_FACTION_STARTED';
@@ -19,24 +13,10 @@ export const PUT_FACTION_STARTED = 'PUT_FACTION_STARTED';
 export const GET_FACTION_FAILURE = 'GET_FACTION_FAILURE';
 export const GET_FACTION_STARTED = 'GET_FACTION_STARTED';*/
 
-export const changePoints = (points) => {
-	return {
-		type: CHANGEPOINTS,
-		points: points
-	}
-}
-
 export const changeName = (name) => {
 	return {
 		type: CHANGENAME,
 		name: name
-	}
-}
-
-export const changeHandle = (handle) => {
-	return {
-		type: CHANGEHANDLE,
-		handle: handle
 	}
 }
 
@@ -61,38 +41,10 @@ export const addNCons = (nCons) => {
 	}
 }
 
-export const addGear = (gear) => {
+export const changeInfluence = (influence) => {
 	return {
-		type: ADDGEAR,
-		gear: gear
-	}
-}
-
-export const changeGoal = (goal) => {
-	return {
-		type: CHANGEGOAL,
-		goal: goal
-	}
-}
-
-export const changeReady = (ready) => {
-	return {
-		type: CHANGEREADY,
-		ready: ready
-	}
-}
-
-export const changeWilling = (willing) => {
-	return {
-		type: CHANGEWILLING,
-		willing: willing
-	}
-}
-
-export const changeAble = (able) => {
-	return {
-		type: CHANGEABLE,
-		able: able
+		type: CHANGEINFLUENCE,
+		influence: influence
 	}
 }
 

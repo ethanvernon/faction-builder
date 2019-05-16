@@ -12,12 +12,12 @@ export const CHANGEABLE = 'CHANGEABLE';
 export const CHANGEWILLING = 'CHANGEWILLING';
 export const CHANGEMOTIVATION = 'CHANGEMOTIVATION';
 export const CHANGEPOINTS = 'CHANGEPOINTS';
-export const PUT_CHARACTER_SUCCESS = 'PUT_CHARACTER_SUCCESS';
-export const PUT_CHARACTER_FAILURE = 'PUT_CHARACTER_FAILURE';
-export const PUT_CHARACTER_STARTED = 'PUT_CHARACTER_STARTED';
-/*export const GET_CHARACTER_SUCCESS = 'GET_CHARACTER_SUCCESS';
-export const GET_CHARACTER_FAILURE = 'GET_CHARACTER_FAILURE';
-export const GET_CHARACTER_STARTED = 'GET_CHARACTER_STARTED';*/
+export const PUT_FACTION_SUCCESS = 'PUT_FACTION_SUCCESS';
+export const PUT_FACTION_FAILURE = 'PUT_FACTION_FAILURE';
+export const PUT_FACTION_STARTED = 'PUT_FACTION_STARTED';
+/*export const GET_FACTION_SUCCESS = 'GET_FACTION_SUCCESS';
+export const GET_FACTION_FAILURE = 'GET_FACTION_FAILURE';
+export const GET_FACTION_STARTED = 'GET_FACTION_STARTED';*/
 
 export const changePoints = (points) => {
 	return {
@@ -104,79 +104,79 @@ export const changeMotivation = (motivation) => {
 }
 
 //tutorial from https://alligator.io/redux/redux-thunk/
-export const putCharacter = (character) => {
+export const putFaction = (faction) => {
 	return dispatch => {
 
 		//first dispatch an immediate synchronous action to the store to indicate that we’ve started saving 
-		dispatch(putCharacterStarted());
+		dispatch(putFactionStarted());
 
-		return axios.post("/api/new-char", {
-				character
+		return axios.post("/api/new-faction", {
+				faction
 		})
 		.then(res => {
-			dispatch(putCharacterSucess(res.data));
+			dispatch(putFactionSucess(res.data));
 			//dispatch(changePasskey(res.data.passkey));
 		})
 		.catch(err => {
 			console.log('error caught');
-			dispatch(putCharacterFailure(err.response.data.message));
+			dispatch(putFactionFailure(err.response.data.message));
 		});
 	};
 };
 
-const putCharacterStarted = () => ({
-	type: PUT_CHARACTER_STARTED
+const putFactionStarted = () => ({
+	type: PUT_FACTION_STARTED
 });
 
-const putCharacterSucess = character => ({
-	type: PUT_CHARACTER_SUCCESS,
+const putFactionSucess = faction => ({
+	type: PUT_FACTION_SUCCESS,
 	payload: {
-		...character
+		...faction
 	}
 });
 
-const putCharacterFailure = error => ({
-	type: PUT_CHARACTER_FAILURE,
+const putFactionFailure = error => ({
+	type: PUT_FACTION_FAILURE,
 	payload: {
 		error
 	}
 });
 
 /*
-export const getCharacter = (passkey) => {
+export const getFaction = (passkey) => {
 	return dispatch => {
 
 		//first dispatch an immediate synchronous action to the store to indicate that we’ve started loading 
-		dispatch(getCharacterStarted());
+		dispatch(getFactionStarted());
 
 		//builds query from user input on home page
 		var getQuery='/api/get-file/?passkey=' + passkey;
 
 		axios.get(getQuery)
 		.then(res => {
-			dispatch(getCharacterSucess(res.data));
-			console.log(res.data[0].character);
-			dispatch(changeCharacter(res.data[0].character));
+			dispatch(getFactionSucess(res.data));
+			console.log(res.data[0].faction);
+			dispatch(changeFaction(res.data[0].faction));
 		})
 		.catch(err => {
-			dispatch(getCharacterFailure(err.message));
+			dispatch(getFactionFailure(err.message));
 		});
 	};
 };
 
-const getCharacterStarted = () => ({
-	type: GET_CHARACTER_STARTED
+const getFactionStarted = () => ({
+	type: GET_FACTION_STARTED
 });
 
-const getCharacterSucess = character => ({
-	type: GET_CHARACTER_SUCCESS,
+const getFactionSucess = faction => ({
+	type: GET_FACTION_SUCCESS,
 	payload: {
-		...character
+		...faction
 	}
 });
 
-const getCharacterFailure = error => ({
-	type: GET_CHARACTER_FAILURE,
+const getFactionFailure = error => ({
+	type: GET_FACTION_FAILURE,
 	payload: {
 		error
 	}

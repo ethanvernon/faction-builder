@@ -1,17 +1,17 @@
 import { 
   CHANGENAME, 
-  PUT_CHARACTER_SUCCESS, 
-  PUT_CHARACTER_FAILURE, 
-  PUT_CHARACTER_STARTED,
+  PUT_FACTION_SUCCESS, 
+  PUT_FACTION_FAILURE, 
+  PUT_FACTION_STARTED,
   CHANGEHANDLE,
   CHANGEIDENTITY,
   ADDPCONS,
   ADDNCONS,
   CHANGEINFLUENCE,
   CHANGEMOTIVATION/*
-  GET_CHARACTER_STARTED,
-  GET_CHARACTER_SUCCESS,
-  GET_CHARACTER_FAILURE*/ } from '../action-creators/actions';
+  GET_FACTION_STARTED,
+  GET_FACTION_SUCCESS,
+  GET_FACTION_FAILURE*/ } from '../action-creators/actions';
 
 var defaultState = "";
 
@@ -86,21 +86,21 @@ export const motivationReducer = (state = {motivation: 'Envy'}, action) => {
   }
 }
 
-export const putCharacterReducer = (state = {saving: false, character: [], error: null}, action) => {
+export const putFactionReducer = (state = {saving: false, faction: [], error: null}, action) => {
   switch (action.type) {
-    case PUT_CHARACTER_STARTED:
+    case PUT_FACTION_STARTED:
       return {
         ...state,
         saving: true
       };
-    case PUT_CHARACTER_SUCCESS:
+    case PUT_FACTION_SUCCESS:
       return {
         ...state,
         saving: false,
         error: null,
-        character: [...state.character, action.payload]
+        faction: [...state.faction, action.payload]
       };
-    case PUT_CHARACTER_FAILURE:
+    case PUT_FACTION_FAILURE:
       return {
         ...state,
         saving: false,
@@ -111,21 +111,21 @@ export const putCharacterReducer = (state = {saving: false, character: [], error
   }
 }
 /*
-export const getCharacterReducer = (state = {loading: false, character: [{passkey:''}], error: null}, action) => {
+export const getFactionReducer = (state = {loading: false, faction: [{passkey:''}], error: null}, action) => {
   switch (action.type) {
-    case GET_CHARACTER_STARTED:
+    case GET_FACTION_STARTED:
       return {
         ...state,
         loading: true
       };
-    case GET_CHARACTER_SUCCESS:
+    case GET_FACTION_SUCCESS:
       return {
         ...state,
         loading: false,
         error: null,
-        character: [...state.character, action.payload]
+        faction: [...state.faction, action.payload]
       };
-    case GET_CHARACTER_FAILURE:
+    case GET_FACTION_FAILURE:
       return {
         ...state,
         loading: false,

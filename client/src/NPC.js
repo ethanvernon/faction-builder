@@ -26,7 +26,7 @@ class Npc extends Component {
 
 const mapStateToProps = ( state ) => {   
 	return { 
-		npc: state.npcs.npc,
+		npc: state.npc.npc,
 	}
 };
 

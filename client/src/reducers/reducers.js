@@ -1,5 +1,4 @@
 import { 
-  CHANGEPOINTS,
   CHANGENAME, 
   PUT_CHARACTER_SUCCESS, 
   PUT_CHARACTER_FAILURE, 
@@ -8,8 +7,6 @@ import {
   CHANGEIDENTITY,
   ADDPCONS,
   ADDNCONS,
-  ADDGEAR,
-  CHANGEGOAL,
   CHANGEINFLUENCE,
   CHANGEMOTIVATION/*
   GET_CHARACTER_STARTED,
@@ -17,16 +14,6 @@ import {
   GET_CHARACTER_FAILURE*/ } from '../action-creators/actions';
 
 var defaultState = "";
-
-export const pointsReducer = (state = {points: 12}, action) => {
-  switch (action.type) {
-    case CHANGEPOINTS:
-      var newPoints = {points: action.points}
-      return Object.assign({}, state, newPoints);
-    default:
-      return state;
-  }
-}
 
 export const nameReducer = (state = {name: ''}, action) => {
   switch (action.type) {
@@ -74,26 +61,6 @@ export const nConReducer = (state = {nCon: 'burned out'}, action) => {
     case ADDNCONS:
       var newNCon = {nCon: action.nCons};
       return Object.assign({}, state, newNCon);
-    default:
-      return state;
-  }
-}
-
-export const gearReducer = (state = {gear: 'Asüna Coupé'}, action) => {
-  switch (action.type) {
-    case ADDGEAR:
-      var newGear = {gear: action.gear};
-      return Object.assign({}, state, newGear);
-    default:
-      return state;
-  }
-}
-
-export const goalReducer = (state = {goal: ''}, action) => {
-  switch (action.type) {
-    case CHANGEGOAL:
-      var newGoal = {goal: action.goal};
-      return Object.assign({}, state, newGoal);
     default:
       return state;
   }

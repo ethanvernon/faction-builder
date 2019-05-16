@@ -10,9 +10,7 @@ import {
   ADDNCONS,
   ADDGEAR,
   CHANGEGOAL,
-  CHANGEREADY,
-  CHANGEABLE,
-  CHANGEWILLING,
+  CHANGEINFLUENCE,
   CHANGEMOTIVATION/*
   GET_CHARACTER_STARTED,
   GET_CHARACTER_SUCCESS,
@@ -101,31 +99,11 @@ export const goalReducer = (state = {goal: ''}, action) => {
   }
 }
 
-export const readyReducer = (state = {ready: 1}, action) => {
+export const influenceReducer = (state = {influence: 1}, action) => {
   switch (action.type) {
-    case CHANGEREADY:
-      var newReady = {ready: action.ready}
-      return Object.assign({}, state, newReady);
-    default:
-      return state;
-  }
-}
-
-export const willingReducer = (state = {willing: 1}, action) => {
-  switch (action.type) {
-    case CHANGEWILLING:
-      var newWilling = {willing: action.willing};
-      return Object.assign({}, state, newWilling);
-    default:
-      return state;
-  }
-}
-
-export const ableReducer = (state = {able: 1}, action) => {
-  switch (action.type) {
-    case CHANGEABLE:
-      var newAble = {able: action.able};
-      return Object.assign({}, state, newAble);
+    case CHANGEINFLUENCE:
+      var newInfluence = {influence: action.influence}
+      return Object.assign({}, state, newInfluence);
     default:
       return state;
   }

@@ -47,7 +47,7 @@ app.post("/api/new-faction", function(req,res) {
 		npc: req.body.faction.npc
 	});
 
-	charToAdd.save()
+	factionToAdd.save()
 	.then(item => {
 		res.send('success');
 	})

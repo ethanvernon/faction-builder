@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.scss';
 import { Button } from 'reactstrap';
-import { putCharacter } from './action-creators/actions';
+import { putFaction } from './action-creators/actions';
 import { Col } from 'reactstrap';
 
 class SaveButton extends Component {
@@ -13,29 +13,23 @@ class SaveButton extends Component {
 
 	handleClick() {
 		console.log(this.props);		
-		this.props.putCharacter(this.characterMaker());
+		this.props.putFaction(this.factionMaker());
 	}
 
-	//our state is flattened, so we want to combine it all into a single character object to send to db
-	characterMaker() {
-		console.log(this.props.points);
+	//our state is flattened, so we want to combine it all into a single faction object to send to db
+	factionMaker() {
 
-		var newCharacter =  {
+		var newFaction =  {
 			name: this.props.name,
-			handle: this.props.handle,
 			identity: this.props.identity,
 			pCon: this.props.pCon,
 			nCon: this.props.nCon,
-			gear: this.props.gear,
-			goal: this.props.goal,
-			ready: this.props.ready,
-			willing: this.props.willing,
-			able: this.props.able,
+			influence: this.props.influence,
 			motivation: this.props.motivation,
-			points: this.props.points
+			npc: this.props.npc
 		}
 
-		return newCharacter;
+		return newFaction;
 	}
 
 	render() {
@@ -67,25 +61,20 @@ class SaveButton extends Component {
 const mapStateToProps = ( state ) => {   
 	return { 
 		name: state.name.name,
-		handle: state.handle.handle,
 		identity: state.identity.identity,
 		pCon: state.pCon.pCon,
 		nCon: state.nCon.nCon,
-		gear: state.gear.gear,
-		goal: state.goal.goal,
-		ready: state.ready.ready,
-		willing: state.willing.willing,
-		able: state.able.able,
+		influence: state.influence.influence,
 		motivation: state.motivation.motivation,
-		saving: state.saveCharacter.saving,
-		points: state.points.points
+		saving: state.saveFaction.saving,
+		npc: state.npc.npc
 	}
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		putCharacter: (character) => {
-			dispatch(putCharacter(character))
+		putFaction: (faction) => {
+			dispatch(putFaction(faction))
 		}
 	}
 };

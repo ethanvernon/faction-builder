@@ -6,7 +6,7 @@ import { nameReducer,
 	nConReducer,
 	influenceReducer,
 	motivationReducer,
-	putCharacterReducer } from './reducers';
+	putFactionReducer } from './reducers';
 
 /**
  * Usually when exporting combineReducers you give a key for each reducer,
@@ -20,5 +20,5 @@ export const rootReducer = combineReducers({
 	nCon: nConReducer,
 	influence: influenceReducer,
 	motivation: motivationReducer,
-	saveCharacter: putCharacterReducer
+	saveFaction: putFactionReducer
 });

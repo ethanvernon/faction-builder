@@ -6,6 +6,7 @@ import {
   CHANGEIDENTITY,
   ADDPCONS,
   ADDNCONS,
+  CHANGENPC,
   CHANGEINFLUENCE,
   CHANGEMOTIVATION/*
   GET_FACTION_STARTED,
@@ -30,6 +31,16 @@ export const identityReducer = (state = {identity: 'activist'}, action) => {
     case CHANGEIDENTITY:
       var newIdentity = {identity: action.identity};
       return Object.assign({}, state, newIdentity);
+    default:
+      return state;
+  }
+}
+
+export const npcReducer = (state = {npc: ''}, action) => {
+  switch (action.type) {
+    case CHANGENPC:
+      var newNpc = {npc: action.npc};
+      return Object.assign({}, state, newNpc);
     default:
       return state;
   }

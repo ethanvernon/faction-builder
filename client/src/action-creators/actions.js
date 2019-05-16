@@ -6,6 +6,7 @@ export const ADDPCONS = 'ADDPCONS';
 export const ADDNCONS = 'ADDNCONS';
 export const CHANGEINFLUENCE = 'CHANGEINFLUENCE';
 export const CHANGEMOTIVATION = 'CHANGEMOTIVATION';
+export const CHANGENPC = 'CHANGENPC';
 export const PUT_FACTION_SUCCESS = 'PUT_FACTION_SUCCESS';
 export const PUT_FACTION_FAILURE = 'PUT_FACTION_FAILURE';
 export const PUT_FACTION_STARTED = 'PUT_FACTION_STARTED';
@@ -17,6 +18,13 @@ export const changeName = (name) => {
 	return {
 		type: CHANGENAME,
 		name: name
+	}
+}
+
+export const changeNpc = (npc) => {
+	return {
+		type: CHANGENPC,
+		npc: npc
 	}
 }
 

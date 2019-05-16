@@ -4,6 +4,7 @@ import { nameReducer,
 	pConReducer,
 	nConReducer,
 	influenceReducer,
+	npcReducer,
 	motivationReducer,
 	putFactionReducer } from './reducers';
 
@@ -16,6 +17,7 @@ export const rootReducer = combineReducers({
 	identity: identityReducer,
 	pCon: pConReducer,
 	nCon: nConReducer,
+	npc: npcReducer,
 	influence: influenceReducer,
 	motivation: motivationReducer,
 	saveFaction: putFactionReducer

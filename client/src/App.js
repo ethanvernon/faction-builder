@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Identity from './Identity';
 import Name from './Name';
 import Parameters from './Parameters';
+import NPC from './NPC';
 import PCon from './PCon';
 import NCon from './NCon';
 import Motivation from './Motivation';
@@ -29,6 +30,7 @@ class App extends Component {
 				<PCon/>
 				<NCon/>
 				<Motivation/>
+				<NPC/>
 				<SaveButton/>
 				<Response/>
 			</div>

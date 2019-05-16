@@ -3,7 +3,6 @@ import {
   PUT_FACTION_SUCCESS, 
   PUT_FACTION_FAILURE, 
   PUT_FACTION_STARTED,
-  CHANGEHANDLE,
   CHANGEIDENTITY,
   ADDPCONS,
   ADDNCONS,
@@ -25,16 +24,6 @@ export const nameReducer = (state = {name: ''}, action) => {
       return state;
   }
 };
-
-export const handleReducer = (state = {handle: 'Please choose a handle'}, action) => {
-  switch (action.type) {
-    case CHANGEHANDLE:
-      var newHandle = {handle: action.handle};
-      return Object.assign({}, state, newHandle);
-    default:
-      return state;
-  }
-}
 
 export const identityReducer = (state = {identity: 'activist'}, action) => {
   switch (action.type) {

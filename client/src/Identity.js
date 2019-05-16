@@ -18,16 +18,16 @@ class Identity extends Component {
 	render() {
 		return (	
 			<select value={this.props.identity} onChange={this.handleChange}>
-				<option value="activist">Activist</option>
-				<option value="courier">Courier</option>
-				<option value="dealer">Dealer</option>
-				<option value="hacker">Hacker</option>
-				<option value="insider">Insider</option>
-				<option value="operative">Operative</option>
-				<option value="outsider">Outsider</option>
-				<option value="tech">Tech</option>
-				<option value="torpedo">Torpedo</option>
-				<option value="worker">Worker</option>
+				<option value="AI">AI</option>
+				<option value="Corporation">Corporation</option>
+				<option value="Entertainment">Entertainment</option>
+				<option value="Agency">Agency</option>
+				<option value="Group">Group</option>
+				<option value="Ronin">Ronin</option>
+				<option value="Pharma">Pharma</option>
+				<option value="Military">Military</option>
+				<option value="Idle Rich">Idle Rich</option>
+				<option value="Gang">Gang</option>
 			</select>					
 		);
 	}

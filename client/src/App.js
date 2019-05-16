@@ -8,8 +8,6 @@ import Parameters from './Parameters';
 import PCon from './PCon';
 import NCon from './NCon';
 import Motivation from './Motivation';
-import Goal from './Goal';
-import Gear from './Gear';
 import SaveButton from './SaveButton';
 import Response from './Response';
 

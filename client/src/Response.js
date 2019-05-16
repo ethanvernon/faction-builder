@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.scss';
 import { Button } from 'reactstrap';
-import { putCharacter } from './action-creators/actions';
+import { putFaction } from './action-creators/actions';
 import { Col } from 'reactstrap';
 
 class Response extends Component {
@@ -24,7 +24,7 @@ class Response extends Component {
 
 const mapStateToProps = ( state ) => {   
 	return { 
-		response: state.saveCharacter.error
+		response: state.saveFaction.error
 	}
 };
 

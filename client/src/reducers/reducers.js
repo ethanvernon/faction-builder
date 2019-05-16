@@ -55,7 +55,7 @@ export const nConReducer = (state = {nCon: 'burned out'}, action) => {
   }
 }
 
-export const influenceReducer = (state = {influence: 1}, action) => {
+export const influenceReducer = (state = {influence: 4}, action) => {
   switch (action.type) {
     case CHANGEINFLUENCE:
       var newInfluence = {influence: action.influence}

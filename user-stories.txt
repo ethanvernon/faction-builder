@@ -1,12 +1,6 @@
-I can make a character, step by step
+I can make a faction step by step
 I can type a name
-I can type a handle (optional)
 I can choose a type
 I can click a PCon (only 1)
 I can click an NCon (only 1)
-I can choose gear (3)
-I can type a goal
-I can assign my parameters (12, max 8)
 I can save and see a confirmation when saved
-I can load
-I can update

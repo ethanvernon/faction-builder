@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const Character = require("./data");
+const Faction = require("./data");
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -31,24 +31,19 @@ db.once("open", () => console.log("connected to the database"));
 //checks if connection with the database is successful
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-//post request to save user's character
-app.post("/api/new-char", function(req,res) {
+//post request to save user's faction
+app.post("/api/new-faction", function(req,res) {
 
 	let randomKey=generate()+generate()+generate();
 
-	var charToAdd = new Character({
+	var factionToAdd = new Faction({
 		passkey: randomKey,
-		name: req.body.character.name,
-		identity: req.body.character.identity,
-		pCons: req.body.character.pCon,
-		nCons: req.body.character.nCon,
-		gear: req.body.character.gear,
-		goal: req.body.character.goal,
-		ready: req.body.character.ready,
-		willing: req.body.character.willing,
-		able: req.body.character.able,
-		motivation: req.body.character.motivation,
-		points: req.body.character.points
+		name: req.body.faction.name,
+		identity: req.body.faction.identity,
+		pCons: req.body.faction.pCon,
+		nCons: req.body.faction.nCon,
+		influence: req.body.faction.influence,
+		motivation: req.body.faction.motivation
 	});
 
 	charToAdd.save()
@@ -126,7 +121,7 @@ function generate_random_number(){
 	return Math.floor((Math.random() * (num_high - num_low)) + num_low);
 }
 
-//generates random string between 1-3 letters and random number (credit: https://codehandbook.org/generate-random-string-characters-in-javascript/ )
+//generates random string between 1-3 letters and random number (credit: https://codehandbook.org/generate-random-string-factions-in-javascript/ )
 function generate() {
 	return generate_random_string(Math.floor((Math.random()*3)+1)) + generate_random_number()
 }

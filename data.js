@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //this is data structure for saving a character to database
-var charSchema = new Schema({    
+var factionSchema = new Schema({    
 	passkey: {
 		type:String,
 		required: true
@@ -23,35 +23,15 @@ var charSchema = new Schema({
 		type:Array,
 		required:true
 	},
-	gear: {
-		type:Array,
-		required:true
-	},
 	motivation: {
 		type:String,
 		required:true
 	},
-	goal: {
-		type:String,
-		required:true
-	},
-	ready: {
+	influence: {
 		type:Number,
 		required:true
-	},
-	willing: {
-		type:Number,
-		required:true
-	},
-	able: {
-		type:Number,
-		required:true
-	},
-	points: {
-		type: Number,
-    	max: [0, 'unspent points']
 	}
 });
 
 //export the Schema
-module.exports = mongoose.model("Character", charSchema);
+module.exports = mongoose.model("Faction", factionSchema);

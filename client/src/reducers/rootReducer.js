@@ -1,15 +1,10 @@
 import { combineReducers } from 'redux';
-import { pointsReducer,
-	nameReducer,
+import { nameReducer,
 	handleReducer,
 	identityReducer,
 	pConReducer,
 	nConReducer,
-	gearReducer,
-	goalReducer,
-	readyReducer,
-	willingReducer,
-	ableReducer,
+	influenceReducer,
 	motivationReducer,
 	putCharacterReducer } from './reducers';
 
@@ -18,17 +13,12 @@ import { pointsReducer,
  * followed by the reducer associated with it.
  */
 export const rootReducer = combineReducers({
-	points: pointsReducer,
 	name: nameReducer,
 	handle: handleReducer,
 	identity: identityReducer,
 	pCon: pConReducer,
 	nCon: nConReducer,
-	gear: gearReducer,
-	goal: goalReducer,
-	ready: readyReducer,
-	willing: willingReducer,
-	able: ableReducer,
+	influence: influenceReducer,
 	motivation: motivationReducer,
 	saveCharacter: putCharacterReducer
 });
